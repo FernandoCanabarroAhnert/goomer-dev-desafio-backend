@@ -89,7 +89,7 @@ public class ProductControllerIT {
             .header("Authorization", "Bearer " + adminBearerToken)
             .accept(APPLICATION_JSON))
             .andExpect(status().isOk())
-            .andExpect(jsonPath("$.content[0].id").value("66ff4052c84da8080960ba1f"))
+            .andExpect(jsonPath("$.content[0].id").value("67015eedf90ce176dccb9755"))
             .andExpect(jsonPath("$.content[0].name").value("Picanha no Espeto"))
             .andExpect(jsonPath("$.content[0].price").value(75.9));
     }

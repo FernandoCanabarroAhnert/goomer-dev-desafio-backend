@@ -94,7 +94,7 @@ public class RestaurantControllerIT {
             .header("Authorization", "Bearer " + userBearerToken)
             .accept(APPLICATION_JSON))
             .andExpect(status().isOk())
-            .andExpect(jsonPath("$.content[0].id").value("66ff3959eea42d82500a5459"))
+            .andExpect(jsonPath("$.content[0].id").value("67015ecef90ce176dccb9753"))
             .andExpect(jsonPath("$.content[0].name").value("Churrascaria Galpão Crioulo"))
             .andExpect(jsonPath("$.content[0].imageUrl").value("https://exemplo.com/galpao-crioulo.jpg"));
     }
@@ -112,7 +112,7 @@ public class RestaurantControllerIT {
             .header("Authorization", "Bearer " + userBearerToken)
             .accept(APPLICATION_JSON))
             .andExpect(status().isOk())
-            .andExpect(jsonPath("$[0].id").value("66ff3959eea42d82500a5459"))
+            .andExpect(jsonPath("$[0].id").value("67015ecef90ce176dccb9753"))
             .andExpect(jsonPath("$[0].name").value("Churrascaria Galpão Crioulo"))
             .andExpect(jsonPath("$[0].imageUrl").value("https://exemplo.com/galpao-crioulo.jpg"));
     }
@@ -130,7 +130,7 @@ public class RestaurantControllerIT {
             .header("Authorization", "Bearer " + userBearerToken)
             .accept(APPLICATION_JSON))
             .andExpect(status().isOk())
-            .andExpect(jsonPath("$[0].id").value("66ff39eceea42d82500a5461"))
+            .andExpect(jsonPath("$[0].id").value("67015fcaf90ce176dccb9761"))
             .andExpect(jsonPath("$[0].name").value("Hamburgueria 1903"))
             .andExpect(jsonPath("$[0].imageUrl").value("https://exemplo.com/hamburgueria-1903.jpg"));
     }
@@ -148,7 +148,7 @@ public class RestaurantControllerIT {
             .header("Authorization", "Bearer " + userBearerToken)
             .accept(APPLICATION_JSON))
             .andExpect(status().isOk())
-            .andExpect(jsonPath("$.content[0].id").value("66ff4052c84da8080960ba1f"))
+            .andExpect(jsonPath("$.content[0].id").value("67015eedf90ce176dccb9755"))
             .andExpect(jsonPath("$.content[0].name").value("Picanha no Espeto"))
             .andExpect(jsonPath("$.content[0].price").value(75.9));
     }
@@ -174,7 +174,7 @@ public class RestaurantControllerIT {
             .header("Authorization", "Bearer " + userBearerToken)
             .accept(APPLICATION_JSON))
             .andExpect(status().isOk())
-            .andExpect(jsonPath("$.id").value("66ff3959eea42d82500a5459"))
+            .andExpect(jsonPath("$.id").value("67015ecef90ce176dccb9753"))
             .andExpect(jsonPath("$.name").value("Churrascaria Galpão Crioulo"))
             .andExpect(jsonPath("$.imageUrl").value("https://exemplo.com/galpao-crioulo.jpg"));
     }
