@@ -1,0 +1,40 @@
+version: "3.7"
+services:
+# ======================================================================================================================
+# MONGODB
+# ======================================================================================================================
+  mongodb:
+    image: mongo:6
+    container_name: mongo_db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=1234567
+    ports:
+      - 27018:27017
+    volumes:
+      - ./.data/mongo:/data/db
+    networks:
+      - dev-network
+# ======================================================================================================================
+# MONGO EXPRESS
+# ======================================================================================================================
+  mongo-express:
+    image: mongo-express
+    container_name: mongo_express
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: 1234567
+      ME_CONFIG_MONGODB_SERVER: mongodb
+      ME_CONFIG_BASICAUTH_USERNAME: root 
+      ME_CONFIG_BASICAUTH_PASSWORD: 1234567 
+    restart: always
+    ports:
+      - 8081:8081
+    networks:
+      - dev-network
+# ======================================================================================================================
+# REDE
+# ======================================================================================================================
+networks:
+  dev-network:
+    driver: bridge
