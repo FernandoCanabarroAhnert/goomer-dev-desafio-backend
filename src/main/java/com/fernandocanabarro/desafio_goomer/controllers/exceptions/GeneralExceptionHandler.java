@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import com.fernandocanabarro.desafio_goomer.models.exceptions.StandardError;
 import com.fernandocanabarro.desafio_goomer.models.exceptions.ValidationError;
-import com.fernandocanabarro.desafio_goomer.services.exceptions.ExpiredActivationCodeException;
 import com.fernandocanabarro.desafio_goomer.services.exceptions.ResourceNotFoundException;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -32,13 +31,6 @@ public class GeneralExceptionHandler {
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<StandardError> notFound(ResourceNotFoundException e,HttpServletRequest request){
         HttpStatus status = HttpStatus.NOT_FOUND;
-        StandardError err = new StandardError(Instant.now(), status.value(), e.getMessage(), request.getRequestURI());
-        return ResponseEntity.status(status).body(err);
-    }
-
-    @ExceptionHandler(ExpiredActivationCodeException.class)
-    public ResponseEntity<StandardError> expiredActivationCode(ExpiredActivationCodeException e,HttpServletRequest request){
-        HttpStatus status = HttpStatus.BAD_REQUEST;
         StandardError err = new StandardError(Instant.now(), status.value(), e.getMessage(), request.getRequestURI());
         return ResponseEntity.status(status).body(err);
     }
