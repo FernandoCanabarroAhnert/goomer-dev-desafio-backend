@@ -20,13 +20,14 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.fernandocanabarro.desafio_goomer.models.product.ProductRequestDTO;
 import com.fernandocanabarro.desafio_goomer.models.product.ProductResponseDTO;
 import com.fernandocanabarro.desafio_goomer.models.product.embedded.OfferRequestDTO;
+import com.fernandocanabarro.desafio_goomer.openapi.ProductControllerOpenAPI;
 import com.fernandocanabarro.desafio_goomer.services.ProductService;
 
 import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/products")
-public class ProductController {
+public class ProductController implements ProductControllerOpenAPI{
 
     @Autowired
     private ProductService service;

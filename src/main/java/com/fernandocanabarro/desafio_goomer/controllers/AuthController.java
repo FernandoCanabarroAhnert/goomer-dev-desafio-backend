@@ -10,13 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fernandocanabarro.desafio_goomer.models.user.RegistrationRequestDTO;
 import com.fernandocanabarro.desafio_goomer.models.user.UserDTO;
+import com.fernandocanabarro.desafio_goomer.openapi.AuthControllerOpenAPI;
 import com.fernandocanabarro.desafio_goomer.services.AuthService;
 
 import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/auth")
-public class AuthController {
+public class AuthController implements AuthControllerOpenAPI{
 
     @Autowired
     private AuthService authService;

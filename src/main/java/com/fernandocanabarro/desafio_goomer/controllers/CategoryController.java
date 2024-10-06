@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fernandocanabarro.desafio_goomer.models.category.CategoryDTO;
 import com.fernandocanabarro.desafio_goomer.models.product.ProductResponseDTO;
+import com.fernandocanabarro.desafio_goomer.openapi.CategoryControllerOpenAPI;
 import com.fernandocanabarro.desafio_goomer.services.CategoryService;
 
 import jakarta.validation.Valid;
@@ -23,7 +24,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/categories")
-public class CategoryController {
+public class CategoryController implements CategoryControllerOpenAPI{
 
     @Autowired
     private CategoryService service;

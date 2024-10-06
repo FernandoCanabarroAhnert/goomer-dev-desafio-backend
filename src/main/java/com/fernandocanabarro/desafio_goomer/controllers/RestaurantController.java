@@ -22,13 +22,14 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.fernandocanabarro.desafio_goomer.models.product.ProductResponseDTO;
 import com.fernandocanabarro.desafio_goomer.models.restaurant.RestaurantRequestDTO;
 import com.fernandocanabarro.desafio_goomer.models.restaurant.RestaurantResponseDTO;
+import com.fernandocanabarro.desafio_goomer.openapi.RestaurantControllerOpenAPI;
 import com.fernandocanabarro.desafio_goomer.services.RestaurantService;
 
 import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/restaurants")
-public class RestaurantController {
+public class RestaurantController implements RestaurantControllerOpenAPI{
 
     @Autowired
     private RestaurantService service;
